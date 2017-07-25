@@ -3,6 +3,7 @@ target/
 
 /logs
 /target
+/bin
 
 ### STS ###
 .apt_generated
