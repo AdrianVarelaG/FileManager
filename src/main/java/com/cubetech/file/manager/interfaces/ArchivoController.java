@@ -26,7 +26,7 @@ public class ArchivoController {
 	
 	@RequestMapping("/Archivo/{id}")
 	public ResponseEntity<ArchivoDTO> consulta(@RequestHeader(value="cuenta") String cuenta ,@PathVariable String id){
-		logger.debug("cuenta: " + cuenta + "/id: " + id);
+		logger.debug("Cuenta: " + cuenta + "/Id: " + id);
 		return new ResponseEntity<ArchivoDTO>(archivoService.consultaArchivo(cuenta, id), HttpStatus.ACCEPTED);
 	}
 	

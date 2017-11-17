@@ -1,0 +1,37 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  profiles:
+    active: "local"
+server:
+  port: 57779
+logging:
+  level:
+    org:
+      hibernate:
+        SQL:  DEBUG
+---
+spring:
+  profiles: local
+  datasource:
+    url:  jdbc:mysql://localhost:3306/file_manager
+    username: fileOwner
+    password: pxbnjkD9YoJxWJfZ
+ 
+---
+spring:
+  profiles: dev
+  datasource:
+    url:  jdbc:mysql://mysql:3306/file_manager
+    username: fileOwner
+    password: pxbnjkD9YoJxWJfZ
+  
+---
+spring:
+  profiles: prd
+  datasource:
+    url:  jdbc:mysql://mysql:3306/file_manager
+    username: fileOwner
+    password: pxbnjkD9YoJxWJfZ
+  
