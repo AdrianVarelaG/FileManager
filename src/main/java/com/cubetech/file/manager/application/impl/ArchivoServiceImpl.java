@@ -15,6 +15,9 @@ import com.cubetech.file.manager.domain.Archivo;
 import com.cubetech.file.manager.domain.ArchivoRepository;
 import com.cubetech.file.manager.interfaces.facade.dto.ArchivoDTO;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class ArchivoServiceImpl implements ArchivoService {
 
@@ -32,6 +35,8 @@ public class ArchivoServiceImpl implements ArchivoService {
 		for(Archivo arch: la){
 			a = modelMapper.map( arch , ArchivoDTO.class);
 		}
+		if(log.isDebugEnabled())
+			log.debug("Archivo: {}", a);
 		return a;
 	}
 
