@@ -1,11 +1,11 @@
-VERSION=1.0.0
+VERSION=dev_0.0.1
 IMAGEN=kster/file_manager
 NAME=file
 mvn package
-docker build -t $IMAGEN:$VERSION -f Dockerfile .
+docker build -t $IMAGEN:$VERSION -f Dockerfile.dev .
 docker push $IMAGEN:$VERSION
 
-ssh deploy@18.218.79.140 -o "StrictHostKeyChecking no" << EOF
+ssh -o "StrictHostKeyChecking no" deploy@18.220.61.105 << EOF
 docker pull $IMAGEN:$VERSION
 docker service update \
   --image $IMAGEN:$VERSION \

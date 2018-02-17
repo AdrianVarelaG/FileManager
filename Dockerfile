@@ -1,6 +1,4 @@
-FROM openjdk:8-jdk-alpine
-RUN apk add --no-cache tzdata
-ENV TZ America/Mexico_City
+FROM kster/8-jdk-alpine:0.0.1
 VOLUME /tmp
 ADD target/fileManager-0.0.1.jar app.jar
 ENV JAVA_OPTS="-Xmx300m"
