@@ -13,6 +13,7 @@ docker service update \
 
 docker service create \
         --name $NAME \
+        --network revnet \
         --network appnet \
         --restart-condition any \
         --replicas=1  \
